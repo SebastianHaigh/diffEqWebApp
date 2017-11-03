@@ -1,0 +1,116 @@
+body {
+background: #131313;
+font-family: 'Lato', sans-serif;
+color: #CFCFCF;
+}
+
+
+        .axis path, .axis line
+        {
+            fill: none;
+            stroke: #303030;
+            shape-rendering: crispEdges;
+        }
+        
+        .axis text
+        {
+            ffont-family: 'Exo 2', sans-serif;
+            font-size: 20px;
+			fill: #CFCFCF;
+        }
+        .tick
+        {
+            stroke-dasharray: 1, 2;
+			color: #CFCFCF;
+        }
+        .bar
+        {
+            fill: FireBrick;
+        }
+        #slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;
+    width: 150px;
+    height: 5px;
+    border-radius: 5px;   
+    background: #303030;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #8A09FF;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #8A09FF;
+    cursor: pointer;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+	background: #8A09FF;
+}
+
+#slidecontainer {
+width: 100%;
+padding: 20px;
+}
+
+#slidecontainer:after {
+	content: "";
+    display: table;
+    clear: both;
+}
+
+.indyConstantControl {
+	float: left;
+	display: inline;
+	padding: 10px;
+}
+
+.controlTitle, .controlOutput {
+	text-align: left;
+	font-size: 15px;
+	padding: 0;
+	margin: 3;
+}
+	
+#page-wrapper {
+	width: 1200px;
+	margin: auto;
+}
+
+.plotArea {
+	display: inline;
+	width: 50%;
+	height: 400px;
+	float: left;
+}
+
+.plotHolder:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.plotAreaTitle {
+	font-size: 25pt;
+	padding:5px;
+}

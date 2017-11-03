@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Percentile Feedback</title>
+<script src="jquery.min.js"></script>
+<script src="d3.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel = "stylesheet" type = "text/css" href = "style.css" />
+</head>
+<body>
+<div id = "page-wrapper">
+<div class = "plotHolder">
+<div id = "timeSeries" class = "plotArea">
+  <p class = "plotAreaTitle">Time Series</p>
+  <svg id="visualisation" width="500" height="500"></svg>
+</div>
+
+<div id = "pole" class = "plotArea">
+   <p class = "plotAreaTitle">Pole Plot</p>
+   <svg id="poleplot" width="500" height="500"></svg>
+</div>
+</div>
+
+<svg id = "ball"></svg>
+
+<div id="slidecontainer">
+  <div id = "aConstantControl" class = "indyConstantControl">
+	<p class = "controlTitle">a</p>
+	<input type="range" min="-100" max="100" value="0" class="slider" id="aSlider">
+	<p class = "controlOutput"><span id="aOutput"></span></p>
+  </div>
+  <div id = "bConstantControl" class = "indyConstantControl">
+    <p class = "controlTitle">b</p>
+	<input type="range" min="-100" max="100" value="0" class="slider" id="bSlider">
+	<p class = "controlOutput"><span id="bOutput"></span></p>
+  </div>
+  <div id = "cConstantControl" class = "indyConstantControl">
+	<p class = "controlTitle">c</p>
+	<input type="range" min="-100" max="100" value="0" class="slider" id="cSlider">
+	<p class = "controlOutput"><span id="cOutput"></span></p>
+  </div>
+  <div id = "ic1ConstantControl" class = "indyConstantControl">
+	<p class = "controlTitle">x(0)</p>
+	<input type="range" min="-100" max="100" value="0" class="slider" id="ic1Slider">
+    <p class = "controlOutput"><span id="ic1Output"></span></p>
+  </div>
+  <div id = "ic2ConstantControl" class = "indyConstantControl">
+	<p class = "controlTitle">x'(0)</p>
+    <input type="range" min="-100" max="100" value="0" class="slider" id="ic2Slider">
+    <p class = "controlOutput"><span id="ic2Output"></span></p>
+  </div>
+</div>
+
+<p><span id="aOutput"></span></p><span class="math">\[a\frac{d^2 x}{dt^2} + b\frac{dx}{dt} + cx = 0, \: \textrm{for initial conditions} \: x(0), x'(0)\]</span>
+<span id="solutionType"></span>
+<p><span id="fuck"></span></p>
+<p>Roots at:</p> <span id = "sigma1"></span> <span id = "sign1"></span><span id = "omega1"></span>i <br>
+<span id = "sigma2"></span> <span id = "sign2"></span><span id = "omega2"></span>i <br>
+constant 1 = <span id="constant1"></span>
+constant 2 = <span id="constant2"></span>
+</div>
+<script src="plot.js"></script>
+<script src="timeSeriesComp.js"></script>
+<script src="solve.js"></script>
+<script src="findRootsandConstants.js"></script>
+<script src="sliderControl.js"></script>
+<script>
+var ci = {a: 1.4, b: 0.7, c: 3, ic1: 1, ic2: 1};
+InitChart(ci["a"], ci["b"], ci["c"], ci["ic1"], ci["ic2"]);
+</script>
+</body>
+</html>
+
+
+
+
