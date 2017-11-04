@@ -112,6 +112,14 @@ accountForInitialContitions = function(ic, roots) {
 		} else {
 			constants = solveForConstants(a, b, c, d, u, v);
 		}
+		var sigStr = sigma.toString();
+		var omgStr = omega.toString();
+		
+		var eq1 = "x(t) = e^{";
+		var eq2 = "t}(";
+		var eq3 = "\\cos(";
+		var eq4 = "t) \\sin(";
+		var eq5 = "t))";
     }
     
     if (roots["type"] == 3) {
@@ -131,6 +139,8 @@ accountForInitialContitions = function(ic, roots) {
 	
 	$("#constant1").text(constants[0].toFixed(8));
 	$("#constant2").text(constants[1].toFixed(8));
+	
+	
     return constants;
 };
 
