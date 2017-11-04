@@ -8,7 +8,8 @@ var bOutput = document.getElementById("bOutput");
 var cOutput = document.getElementById("cOutput");
 var ic1Output = document.getElementById("ic1Output");
 var ic2Output = document.getElementById("ic2Output");
-
+var resetButton = document.getElementById("resetButton");
+var data;
 aSlider.defaultValue = ci["a"];
 bSlider.defaultValue = ci["b"];
 cSlider.defaultValue = ci["c"];
@@ -24,42 +25,52 @@ ic2Output.innerHTML = ic2Slider.value;
 
 // Update the current slider value (each time you drag the slider handle)
 
+resetButton.onclick = function() {
+	d3.selectAll("svg > *").remove();
+	data = makeGraph(ci["a"], ci["b"], ci["c"], ci["ic1"], ci["ic2"]);
+	roots = findRoots(ci["a"], ci["b"], ci["c"]);
+	InitChart(data, roots);
+	$("#mathstuff").text("\(\frac{1}{\lambda}\)")
+};
+
 aSlider.oninput = function() {
-	
     $("#aOutput").text((this.value)/10);
 	ci["a"] = (this.value)/10;
 	d3.selectAll("svg > *").remove();
-	InitChart(ci["a"], ci["b"], ci["c"], ci["ic1"], ci["ic2"]);
+	data = makeGraph(ci["a"], ci["b"], ci["c"], ci["ic1"], ci["ic2"]);
+	roots = findRoots(ci["a"], ci["b"], ci["c"]);
+	InitChart(data, roots);
 };
 
 bSlider.oninput = function() {
-	var num = (this.value)/10;
-	var b = Math.abs(num.toFixed(1));
-	if (num < 0) {
-		$("#bSign").text("-");
-	} else {
-		$("#bSign").text("+");
-	}
-    $("#bOutput").text(b);
+    $("#bOutput").text((this.value)/10);
 	ci["b"] = (this.value)/10;
 	d3.selectAll("svg > *").remove();
-	InitChart(ci["a"], ci["b"], ci["c"], ci["ic1"], ci["ic2"]);
+	data = makeGraph(ci["a"], ci["b"], ci["c"], ci["ic1"], ci["ic2"]);
+	roots = findRoots(ci["a"], ci["b"], ci["c"]);
+	InitChart(data, roots);
 };
 cSlider.oninput = function() {
     $("#cOutput").text((this.value)/10);
 	ci["c"] = (this.value)/10;
 	d3.selectAll("svg > *").remove();
-	InitChart(ci["a"], ci["b"], ci["c"], ci["ic1"], ci["ic2"]);
+	data = makeGraph(ci["a"], ci["b"], ci["c"], ci["ic1"], ci["ic2"]);
+	roots = findRoots(ci["a"], ci["b"], ci["c"]);
+	InitChart(data, roots);
 };
 ic1Slider.oninput = function() {
     $("#ic1Output").text((this.value)/10);
 	ci["ic1"] = (this.value)/10;
 	d3.selectAll("svg > *").remove();
-	InitChart(ci["a"], ci["b"], ci["c"], ci["ic1"], ci["ic2"]);
+	data = makeGraph(ci["a"], ci["b"], ci["c"], ci["ic1"], ci["ic2"]);
+	roots = findRoots(ci["a"], ci["b"], ci["c"]);
+	InitChart(data, roots);
 };
 ic2Slider.oninput = function() {
     $("#ic2Output").text((this.value)/10);
 	ci["ic2"] = (this.value)/10;
 	d3.selectAll("svg > *").remove();
-	InitChart(ci["a"], ci["b"], ci["c"], ci["ic1"], ci["ic2"]);
+	data = makeGraph(ci["a"], ci["b"], ci["c"], ci["ic1"], ci["ic2"]);
+	roots = findRoots(ci["a"], ci["b"], ci["c"]);
+	InitChart(data, roots);
 };

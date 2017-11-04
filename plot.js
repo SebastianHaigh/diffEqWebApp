@@ -1,9 +1,11 @@
 var ci = {a: 1.4, b: 0.7, c: 3, ic1: 1, ic2: 1};
-InitChart(ci["a"], ci["b"], ci["c"], ci["ic1"], ci["ic2"]);
-function InitChart(a, b, c, ic1, ic2) {
+data = makeGraph(ci["a"], ci["b"], ci["c"], ci["ic1"], ci["ic2"]);
+poles = findRoots(ci["a"], ci["b"], ci["c"]);
+InitChart(data, poles);
+function InitChart(lineData, pole) {
 
-  var lineData = makeGraph(a, b, c, ic1, ic2);
-  var pole = findRoots(a, b, c);
+  //var lineData = makeGraph(a, b, c, ic1, ic2);
+  //var pole = findRoots(a, b, c);
   
   sigma1 = pole["root1"][0];
   omega1 = pole["root1"][1];
@@ -71,17 +73,21 @@ function InitChart(a, b, c, ic1, ic2) {
 
 function ball(data) {
 
-	var ball = d3.select("#ball").attr("width",960).style("height",100);
+	var ball = d3.select("#ball").attr("width",1200).style("height",100);
 
+	
+	var initPosition = 600+Math.floor(data[0].y)*100;
 	var mycircle = ball.append("circle")
-		.attr("cx",500+data[0].y)
+		.attr("cx",initPosition)
 		.attr("cy",50)
 		.style("fill","#CC008E")
-		.attr("r",20)
+		.attr("r",20);
+	
+	
 
 	setInterval(function() {		  
 		var p = data.shift();
-		var v = p.y*100+500;
+		var v = p.y*100+600;
 		v = Math.floor(v);
 
 		mycircle.transition()
