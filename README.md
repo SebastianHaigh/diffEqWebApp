@@ -14,4 +14,4 @@ There may be some gitches in the solutions, so use at your own risk, but it will
 
 diffEqWebApp/screenshot.PNG
 
-![alt text](https://raw.githubusercontent.com/SebastianHaigh/diffEqWebApp/master/screenshot.png)
+![alt text](SebastianHaigh/diffEqWebApp/master/screenshot.png)
