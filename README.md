@@ -11,3 +11,7 @@ Plots the time series (with initial conditions) and poles (assuming initial rest
 Press "Start simulation" button and the pink ball will move according to the solution.
 
 There may be some gitches in the solutions, so use at your own risk, but it will help in gaining some insight.
+
+diffEqWebApp/screenshot.PNG
+
+![alt text](https://raw.githubusercontent.com/SebastianHaigh/diffEqWebApp/master/screenshot.png)
