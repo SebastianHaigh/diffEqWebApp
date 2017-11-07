@@ -12,6 +12,4 @@ Press "Start simulation" button and the pink ball will move according to the sol
 
 There may be some gitches in the solutions, so use at your own risk, but it will help in gaining some insight.
 
-diffEqWebApp/screenshot.PNG
-
-![Alt text](screenshot.PNG)
+![screenshot](screenshot.PNG)
