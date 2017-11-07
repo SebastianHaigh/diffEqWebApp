@@ -40,7 +40,7 @@ function findRoots(dO) {
 	var xdash = dO.intCon.xdash;
 	var roots, constants;
 	dO.type = determineRootType(a, b, c);
-	$("#testing").text(dO.type);
+	
 	if (dO.type == 1) {
 		roots = getRootsDistinct(a, b, c);
 		constants = distinctRootsConstants(dO.root1, dO.root2, x, xdash);
@@ -58,7 +58,7 @@ function findRoots(dO) {
 	if (dO.type == 4) {
 		roots = getRootsFirstOrder(a, b, c);
 		constants = firstOrderConstants(dO.root1, x, xdash);
-		$("#testing").text("Dont");
+	
 	}
 	if (dO.type == 5) {
 		roots = getRootsZerothOrder(a, b, c);
@@ -193,7 +193,7 @@ makeGrid = function(dO) {
 };
 
 distinctRealRoots = function(root1, root2, constants, point) {
-	outputPoint = constants.A*Math.exp(root1*point) + constants.A*Math.exp(root2*point);
+	outputPoint = constants.A*Math.exp(root1*point) + constants.B*Math.exp(root2*point);
 	return {t: point, x: outputPoint};
 };
 
