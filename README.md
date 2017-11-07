@@ -14,4 +14,4 @@ There may be some gitches in the solutions, so use at your own risk, but it will
 
 diffEqWebApp/screenshot.PNG
 
-(diffEqWebApp/screenshot.png)
+![Alt text](/diffEqWebApp/screenshot.png?raw=true "Optional Title")
