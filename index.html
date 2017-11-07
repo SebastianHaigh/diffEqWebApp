@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Percentile Feedback</title>
+<title>Differential Equation App</title>
 <script src="jquery.min.js"></script>
 <script src="d3.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -29,8 +29,12 @@
 	<p>Roots at:</p> 
 	<span id = "sigma1"></span> <span id = "sign1"></span><span id = "omega1"></span>i <br>
 	<span id = "sigma2"></span> <span id = "sign2"></span><span id = "omega2"></span>i <br>
-	<p>constant 1 = <span id="constant1"></span></p>
-	<p>constant 2 = <span id="constant2"></span></p>
+	<div class ="equation"><span class="math" id = "diffEq">\[\]</span></div>
+	<div class ="equation"><span class="math" id = "solEq">\[ \]</span></div>
+	<p><button id = "startButton">Start Simulation</button></p>
+	<p><button id = "resetButton">Reset Simulation</button></p>
+	
+	
 </div>
 </div>
 
@@ -63,23 +67,12 @@
     <p class = "controlOutput"><span id="ic2Output"></span></p>
   </div>
 </div>
-<button id = "resetButton">BUTTON</button>
-<span class="math">\[a\frac{d^2 x}{dt^2} + b\frac{dx}{dt} + cx = 0, \: \textrm{for initial conditions} \: x(0), x'(0)\]</span>
-<div id ="Mathdiv" class="math">The ansewr is : \( \)</div>
-<span class="math"><span id ="mathstuff"></span></span>
+
 </div>
 <script src="plot.js"></script>
-
-<script src="solve.js"></script>
 <script src="findRootsandConstants.js"></script>
 <script src="sliderControl.js"></script>
-<script src="timeSeriesComp.js"></script>
-<script>
-var ci = {a: 1.4, b: 0.7, c: 3, ic1: 1, ic2: 1};
-data = makeGraph(ci["a"], ci["b"], ci["c"], ci["ic1"], ci["ic2"]);
-poles = findRoots(ci["a"], ci["b"], ci["c"]);
-InitChart(data, poles);
-</script>
+
 </body>
 </html>
 
