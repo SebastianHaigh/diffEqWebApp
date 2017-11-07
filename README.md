@@ -14,4 +14,4 @@ There may be some gitches in the solutions, so use at your own risk, but it will
 
 diffEqWebApp/screenshot.PNG
 
-![Alt text](screenshot.png)
+![Alt text](screenshot.PNG)
