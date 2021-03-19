@@ -74,6 +74,19 @@ if (yMinAbs > yMax) {
 
 };
 
+class Ball {
+	constructor(ball_area) {
+		this.current_position = 0;
+		this.ball_area = ball_area;
+	};
+}
+
+class BallArea {
+	constructor(width, height) {
+		this.area = d3.select("#ball").attr("width", width).style("height", height);
+	}
+}
+
 function initBall(x) {
 	var ballArea = createBallPlotArea();
 	var ball = createBall(x, ballArea);
